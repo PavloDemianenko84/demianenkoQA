@@ -23,3 +23,13 @@ class GitHub:
         body = r.json()
 
         return body
+
+    def search_commit(self, name):
+        r = requests.get(
+            "https://api.github.com/search/commits",
+            params={"q": name}
+            )
+        
+        body = r.json()
+
+        return body
