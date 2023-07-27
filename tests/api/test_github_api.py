@@ -40,12 +40,13 @@ def test_emojis_exist(github_api):
 def test_commit_can_be_found(github_api):
     r = github_api.search_commit("Test api client")
     assert r['total_count'] != 0
-    assert r.status_code == 200
+    
 
 @pytest.mark.api
 def test_commit_can_not_be_found(github_api):
     r = github_api.search_commit("jkgdsvhkjgdhfhsk")
     assert r['total_count'] == 0
+    
 
 
 
